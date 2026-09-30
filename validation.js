@@ -1,7 +1,9 @@
 export function validateEmail(email) {
   return typeof email === "string" &&
     email.includes("@") &&
-    email.includes(".");
+    email.includes(".") &&
+    !email.startsWith("@") &&
+    !email.endsWith(".");
 }
 
 export function validatePassword(password) {
