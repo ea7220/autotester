@@ -20,7 +20,7 @@ test("validateEmail hylkää sähköpostin ilman @-merkkiä", () => {
   assert.strictEqual(result, false);
 });
 
-test("validatePassword hylkää liian lyhyen salasanan", () => {
+test("validatePassword hylkää liian lyhyt salasanan", () => {
   const result = validatePassword("sala123");
 
   assert.strictEqual(result, false);
@@ -37,3 +37,10 @@ test("validateAge hyväksyy ikä 18", () => {
 
   assert.strictEqual(result, true);
 });
+
+test("validateAge hylkää ikä 15", () => {
+  const result = validateAge(15);
+
+  assert.strictEqual(result, false);
+});
+
